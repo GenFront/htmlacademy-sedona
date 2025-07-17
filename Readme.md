@@ -44,10 +44,14 @@ _`.editorconfig`, `.gitattributes`, `.gitignore`, `Contributing.md`, `Readme.md`
 
 ### [Добавлено]
 
-## Структура проекта
+# Проект «Sedona»
 
-/SEDONA
-├── /images
-│ └── /icons
+## Структура
 
-_Папки созданы, изображения будут добавлены позже._
+/sedona
+/images
+├── .gitkeep
+└── /icons
+└── .gitkeep
+
+_Файлы изображений будут добавлены позже._
