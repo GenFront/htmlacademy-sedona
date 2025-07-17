@@ -9,4 +9,4 @@
 ---
 
 Работаю в ветке main
-10.07.2025 удалил, в <nav class="header__nav header__nav--right" aria-label="Действия">, в первом <li> в <a> значение visually-hidden и добавил <svg aria-hidden="true"><!-- Иконка (например, SVG) --></svg>
+10.07.2025 удалил, в <nav class="header__nav header__nav--right" aria-label="Действия">,<br> в первом <li> в <a> значение visually-hidden и добавил <svg aria-hidden="true"><!-- Иконка (например, SVG) --></svg>
