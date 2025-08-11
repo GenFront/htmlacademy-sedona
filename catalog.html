@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Каталог гостиниц</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <a class="header__logo" href="index.html" aria-label="На главную">
+        <img src="images/logo-min.svg" width="100" height="50" alt="Логотип Седона">
+      </a>
+
+      <nav class="header__nav header__nav--left" aria-label="Основное меню">
+        <ul class="nav">
+          <li class="nav__item">
+            <a class="nav__link nav__link--activ" href="index.html" aria-current="page">Главная</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">О Седоне</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="/catalog.html">Гостиницы</a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="header__nav header__nav--right" aria-label="Действия">
+        <ul class="nav">
+          <li class="nav__item">
+            <a class="nav__link" href="#">
+              <span class="visually-hidden">Поиск</span>
+              <svg aria-hidden="true"><!-- Иконка (например, SVG) --></svg> <!--Потом иконку убрать в стили -->
+            </a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link visually-hidden" href="#">
+              <span class="visually-hidden">Отелей в избранное:</span>
+              <span class="nav__count">12</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="#">Хочу сюда!</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page__main">
+      <section class="catalog-filters" aria-label="Фильтр гостиниц">
+        <!-- Шапка с заголовком и хлебными крошками -->
+        <header class="page-header">
+          <h1 class="page-title">Гостиницы Седоны</h1>
+
+          <nav class="breadcrumbs" aria-label="Навигационная цепочка">
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="index.html" aria-label="Вернуться на главную">
+                  <svg class="breadcrumbs__icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+                    <path d="M10 0L0 10h3v10h4V12h6v8h4V10h3z" />
+                  </svg>
+                  <span class="visually-hidden">Главная</span>
+                </a>
+              </li>
+              <li class="breadcrumbs__item" aria-hidden="true">
+                <span class="breadcrumbs__separator">&rsaquo;</span>
+              </li>
+              <li class="breadcrumbs__item">
+                <span class="breadcrumbs__current" aria-current="page">Гостиницы</span>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <!-- Основная форма фильтров -->
+        <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
+          <!-- Блок фильтров -->
+          <aside class="catalog-filter__content">
+            <!-- Группа фильтров -->
+            <div class="filter-group">
+              <!-- Инфраструктура -->
+              <fieldset class="filter-section">
+                <legend class="filter-section__title">Инфраструктура:</legend>
+                <ul class="filter-list">
+                  <li class="filter-list__item">
+                    <input type="checkbox" name="infrastructure[]" id="infra-pool" value="pool" checked class="filter-checkbox">
+                    <label for="infra-pool" class="filter-label">Бассейн</label>
+                  </li>
+                  <li class="filter-list__item">
+                    <input type="checkbox" name="infrastructure[]" id="infra-parking" value="parking" checked class="filter-checkbox">
+                    <label for="infra-parking" class="filter-label">Парковка</label>
+                  </li>
+                  <li class="filter-list__item">
+                    <input type="checkbox" name="infrastructure[]" id="infra-wifi" value="wifi" class="filter-checkbox">
+                    <label for="infra-wifi" class="filter-label">Wi-Fi</label>
+                  </li>
+                </ul>
+              </fieldset>
+
+              <!-- Тип жилья -->
+              <fieldset class="filter-section">
+                <legend class="filter-section__title">Тип жилья:</legend>
+                <ul class="filter-list">
+                  <li class="filter-list__item">
+                    <input type="radio" name="housing-type" id="housing-hotel" value="hotel" checked class="filter-radio">
+                    <label for="housing-hotel" class="filter-label">Гостиница</label>
+                  </li>
+                  <li class="filter-list__item">
+                    <input type="radio" name="housing-type" id="housing-motel" value="motel" class="filter-radio">
+                    <label for="housing-motel" class="filter-label">Мотель</label>
+                  </li>
+                  <li class="filter-list__item">
+                    <input type="radio" name="housing-type" id="housing-apartment" value="apartment" class="filter-radio">
+                    <label for="housing-apartment" class="filter-label">Апартаменты</label>
+                  </li>
+                </ul>
+              </fieldset>
+
+              <!-- Фильтр по цене -->
+              <fieldset class="filter-section">
+                <legend class="filter-section__title">Стоимость, ₽:</legend>
+                <div class="price-range">
+                  <div class="price-range__inputs">
+                    <label class="price-range__label">
+                      <input type="number" name="min-price" class="price-range__input" placeholder="0" min="0" max="10000">
+                      <span class="price-range__text">от</span>
+                    </label>
+                    <label class="price-range__label">
+                      <input type="number" name="max-price" class="price-range__input" placeholder="10 000" min="0" max="10000">
+                      <span class="price-range__text">до</span>
+                    </label>
+                  </div>
+                  <div class="price-range__slider">
+                    <!-- Сюда будет вставлен JS-слайдер -->
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <!-- Кнопки управления -->
+            <div class="filter-actions">
+              <button type="submit" class="filter-button filter-button--apply">Применить</button>
+              <button type="reset" class="filter-button filter-button--reset">Сбросить</button>
+            </div>
+          </aside>
+        </form>
+      </section>
+
+    </main>
+  </body>
+
+</html>
