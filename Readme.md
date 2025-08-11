@@ -2,6 +2,7 @@
 
 - Студент: [Геннадий Тихонов]({{userProfile}}).
 - Наставник: `Асинхронное обучение`.
+- Сайт: https://genfront.github.io/htmlacademy-sedona/
 
 ---
 
@@ -93,3 +94,5 @@ _`.editorconfig`, `.gitattributes`, `.gitignore`, `Contributing.md`, `Readme.md`
 ## 5. Структура проекта
 - `index.html` — главная страница.
 - `catalog.html` — страница каталога (добавлена 15.01.2024).
+
+## 6. Выполнил ТЗ, добавил адрес сайта
