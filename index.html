@@ -123,7 +123,7 @@
           Укажите предполагаемые даты поездки, и мы покажем вам лучшие
           предложения гостиниц в Седоне
         </p>
-        <!--Эта кнопка открывает модальное окно-->
+
         <button class="button" type="button" aria-haspopup="dialog">
           Поиск гостиницы в Седоне
         </button>
@@ -136,10 +136,9 @@
         </p>
 
         <form class="newsletter-form" action="https://echo.htmlacademy.ru/" method="post">
-          <!--label обязательный атрибут к input. Показывает зачем это поле, как его заполнять. -->
+
           <label for="newsletter-email" class="visually-hidden">Введите Email</label>
-          <input class="newsletter-form__input" type="email" id="newsletter-email" name="newsletter-email" placeholder="Ваш email" aria-label="Введите email для подписки" required> <!--required - показывает, что это поле обязательно для заполнения-->
-          <!--placeholder - подсказка для заполнения-->
+          <input class="newsletter-form__input" type="email" id="newsletter-email" name="newsletter-email" placeholder="Ваш email" aria-label="Введите email для подписки" required>
           <button class="newsletter-button" type="submit">Подписаться</button>
         </form>
       </section>
@@ -148,8 +147,7 @@
       <!-- Универсальный класс вместо footer__content -->
       <section class="content">
         <h2 class="visually-hidden">Социальные сети и контакты</h2>
-        <!--Подумать о том чтобы не привязыать список в footer к footer. Так как этот список может быть и в другом месте-->
-        <!-- Соцсети: независимый компонент -->
+
         <ul class="socials" aria-label="Социальные сети">
           <li>
             <a class="social-button" href="https://vk.com/htmlacademy">ВКонтакте</a>
@@ -165,7 +163,7 @@
         <address class="contacts">
           <a href="tel:+78001234567" aria-label="Позвонить в службу поддержки">8 (800) 123-45-67</a>
         </address>
-        <!-- Логотип: можно оставить footer__logo, если он уникален для подвала -->
+
         <a class="footer__logo" href="https://htmlacademy.ru/intensive/htmlcss" aria-label="Перейти на сайт HTML Academy">
           <img src="#" alt="HTML Academy">
         </a>
