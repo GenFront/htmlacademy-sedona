@@ -2,26 +2,27 @@
 <html lang="ru">
 
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>Каталог гостиниц</title>
+    <title>HTML Academy: Седона - Каталог гостиниц</title>
   </head>
 
   <body>
     <header class="header">
       <a class="header__logo" href="index.html" aria-label="На главную">
-        <img src="images/logo-min.svg" width="100" height="50" alt="Логотип Седона">
+        <img src="#" alt="Логотип Седона">
       </a>
 
       <nav class="header__nav header__nav--left" aria-label="Основное меню">
         <ul class="nav">
           <li class="nav__item">
-            <a class="nav__link nav__link--activ" href="index.html" aria-current="page">Главная</a>
+            <a class="nav__link nav__link--activ" href="index.html">Главная</a>
           </li>
           <li class="nav__item">
             <a class="nav__link" href="#">О Седоне</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="/catalog.html">Гостиницы</a>
+            <a class="nav__link" href="/catalog.html" aria-current="page">Гостиницы</a>
           </li>
         </ul>
       </nav>
@@ -50,15 +51,17 @@
 
     <main class="page__main">
       <section class="catalog-filters" aria-label="Фильтр гостиниц">
-        <!-- Шапка с заголовком и хлебными крошками -->
+
         <header class="page-header">
           <h1 class="page-title">Гостиницы Седоны</h1>
 
-          <nav class="breadcrumbs" aria-label="Навигационная цепочка">
+          <!-- Хлебные крошки -->
+          <div class="breadcrumbs" role="navigation" aria-label="Навигационная цепочка">
+
             <ul class="breadcrumbs__list">
               <li class="breadcrumbs__item">
                 <a class="breadcrumbs__link" href="index.html" aria-label="Вернуться на главную">
-                  <svg class="breadcrumbs__icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+                  <svg class="breadcrumbs__icon" width="20" viewBox="0 0 20 20" aria-hidden="true">
                     <path d="M10 0L0 10h3v10h4V12h6v8h4V10h3z" />
                   </svg>
                   <span class="visually-hidden">Главная</span>
@@ -68,10 +71,10 @@
                 <span class="breadcrumbs__separator">&rsaquo;</span>
               </li>
               <li class="breadcrumbs__item">
-                <span class="breadcrumbs__current" aria-current="page">Гостиницы</span>
+                <span class="breadcrumbs__current">Гостиницы</span>
               </li>
             </ul>
-          </nav>
+          </div>
         </header>
 
         <!-- Основная форма фильтров -->
@@ -80,7 +83,7 @@
           <aside class="catalog-filter__content">
             <!-- Группа фильтров -->
             <div class="filter-group">
-              <!-- Инфраструктура -->
+
               <fieldset class="filter-section">
                 <legend class="filter-section__title">Инфраструктура:</legend>
                 <ul class="filter-list">
@@ -124,11 +127,11 @@
                 <div class="price-range">
                   <div class="price-range__inputs">
                     <label class="price-range__label">
-                      <input type="number" name="min-price" class="price-range__input" placeholder="0" min="0" max="10000">
+                      <input type="number" name="min-price" class="price-range__input" placeholder="0" min="0" max="9000">
                       <span class="price-range__text">от</span>
                     </label>
                     <label class="price-range__label">
-                      <input type="number" name="max-price" class="price-range__input" placeholder="10 000" min="0" max="10000">
+                      <input type="number" name="max-price" class="price-range__input" placeholder="9 000" min="0" max="9000">
                       <span class="price-range__text">до</span>
                     </label>
                   </div>
@@ -139,7 +142,6 @@
               </fieldset>
             </div>
 
-            <!-- Кнопки управления -->
             <div class="filter-actions">
               <button type="submit" class="filter-button filter-button--apply">Применить</button>
               <button type="reset" class="filter-button filter-button--reset">Сбросить</button>
@@ -148,7 +150,188 @@
         </form>
       </section>
 
+      <section class="search-results">
+        <h2 class="search-results__title">НАЙДЕНО ГОСТИНИЦ: 38</h2>
+
+        <div class="controls-row">
+          <select class="sorting" aria-label="Сортировка">
+            <option value="price-asc">Сначала дешевые</option>
+            <option value="price-desc">Сначала дорогие</option>
+          </select>
+          <!-- Переключение вида -->
+          <div class="controls-group controls-group--view">
+
+            <a class="view-option view-option--current" href="catalog.html?view=tile"> <!--значение href добавил согласно ТЗ п.3.19 -->
+              <span class="visually-hidden">Показать карточки</span>
+              <svg aria-hidden="true" width="16" height="16"><!-- Иконка плитки --></svg>
+            </a>
+            <a class="view-option" href="catalog.html?view=card">
+              <span class="visually-hidden">Показать карточки с описанием</span>
+              <svg aria-hidden="true" width="16" height="16"><!-- Иконка карточек --></svg>
+            </a>
+            <a class="view-option" href="catalog.html?view=list">
+              <span class="visually-hidden">Показать список</span>
+              <svg aria-hidden="true" width="16" height="16"><!-- Иконка списка --></svg>
+            </a>
+          </div>
+
+          <div class="hotel-cards">
+            <!-- Карточка 1 -->
+            <article class="hotel-card">
+              <a class="hotel-card__image-link" href="#">
+                <img src="#" alt="Алмазный отдых" width="300" height="200">
+              </a>
+              <h3 class="hotel-card__title">Amara Resort & Spa</h3>
+              <ul class="hotel-card__details">
+                <li class="hotel-card__type">Гостиница</li>
+                <li class="hotel-card__price">От 4000 ₽</li>
+                <li class="hotel-card__more"><a href="#">Подробнее</a></li><!--Оформлена как ссылка, так как в ТЗ об этом сказано-->
+                <li class="hotel-card__favorite"><button>В Избранном</button></li>
+                <li class="hotel-card__rating">
+                  <div class="rating-stars" data-rating="4">
+                    <span class="visually-hidden">Рейтинг: 4 звёзды</span>
+                    ★★★★
+                  </div>
+                  <span class="rating-value">Рейтинг 8.5</span>
+                </li>
+              </ul>
+            </article>
+
+            <!-- Карточка 2 -->
+            <article class="hotel-card">
+              <a class="hotel-card__image-link" href="#">
+                <img src="#" alt="Виллы у Красных Скал" width="300" height="200">
+              </a>
+              <h3 class="hotel-card__title">Villas at Poco Diablo</h3>
+              <ul class="hotel-card__details">
+                <li class="hotel-card__type">Гостиница</li>
+                <li class="hotel-card__price">От 5000 ₽</li>
+                <li class="hotel-card__more"><a href="#">Подробнее</a></li>
+                <li class="hotel-card__favorite"><button>В Избранном</button></li>
+                <li class="hotel-card__rating">
+                  <div class="rating-stars" data-rating="4">
+                    <span class="visually-hidden">Рейтинг: 4 звёзды</span>
+                    ★★★★
+                  </div>
+                  <span class="rating-value">Рейтинг 9.2</span>
+                </li>
+              </ul>
+            </article>
+
+            <!-- Карточка 3 -->
+            <article class="hotel-card">
+              <a class="hotel-card__image-link" href="#">
+                <img src="#" alt="Песчаный ковчег" width="300" height="200">
+              </a>
+              <h3 class="hotel-card__title">Desert Quail Inn</h3>
+              <ul class="hotel-card__details">
+                <li class="hotel-card__type">Гостиница</li>
+                <li class="hotel-card__price">От 2500 ₽</li>
+                <li class="hotel-card__more"><a href="#">Подробнее</a></li>
+                <li class="hotel-card__favorite"><button>В Избранном</button></li>
+                <li class="hotel-card__rating">
+                  <div class="rating-stars" data-rating="3">
+                    <span class="visually-hidden">Рейтинг: 3 звёзды</span>
+                    ★★★
+                  </div>
+                  <span class="rating-value">Рейтинг 6.9</span>
+                </li>
+              </ul>
+            </article>
+
+            <!-- Карточка 4 -->
+            <article class="hotel-card">
+              <a class="hotel-card__image-link" href="#">
+                <img src="#" alt="Оазис Тишины" width="300" height="200">
+              </a>
+              <h3 class="hotel-card__title">GreenTree Inn</h3>
+              <ul class="hotel-card__details">
+                <li class="hotel-card__type">Гостиница</li>
+                <li class="hotel-card__price">От 1500 ₽</li>
+                <li class="hotel-card__more"><a href="#">Подробнее</a></li>
+                <li class="hotel-card__favorite"><button>В Избранном</button></li>
+                <li class="hotel-card__rating">
+                  <div class="rating-stars" data-rating="2">
+                    <span class="visually-hidden">Рейтинг: 2 звёзды</span>
+                    ★★
+                  </div>
+                  <span class="rating-value">Рейтинг 5.0</span>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Пагинация -->
+      <ul class="pagination">
+        <li class="pagination__item">
+          <a href="#" class="pagination__link pagination__link--current">1</a>
+        </li>
+        <li class="pagination__item">
+          <a href="#" class="pagination__link">2</a>
+        </li>
+        <li class="pagination__item">
+          <a href="#" class="pagination__link">3</a>
+        </li>
+        <li class="pagination__item">
+          <a href="#" class="pagination__link">4</a>
+        </li>
+        <li class="pagination__item">
+          <span class="pagination__ellipsis">...</span>
+        </li>
+        <li class="pagination__item">
+          <a href="#" class="pagination__link">10</a>
+        </li>
+      </ul>
+
+      <section class="subscribe" aria-label="Подписка на рассылку">
+        <h2 class="subscribe__title">Подпишитесь на рассылку</h2>
+        <p class="subscribe__text">
+          Только полезная информация и никакого спама, честное бойскаутское!
+        </p>
+
+        <form class="newsletter-form" action="https://echo.htmlacademy.ru/" method="post">
+
+          <label for="newsletter-email" class="visually-hidden">Введите Email</label>
+          <input class="newsletter-form__input" type="email" id="newsletter-email" name="newsletter-email" placeholder="Ваш email" aria-label="Введите email для подписки" required>
+          <button class="newsletter-button" type="submit">Подписаться</button>
+        </form>
+      </section>
     </main>
+
+    <footer class="footer">
+
+      <section class="content">
+        <h2 class="visually-hidden">Социальные сети и контакты</h2>
+
+        <ul class="socials" aria-label="Социальные сети">
+          <li>
+            <a class="social-button" href="https://vk.com/htmlacademy">
+              <span class="visually-hidden">VKotakte</span>
+            </a>
+          </li>
+          <li>
+            <a class="social-button" href="https://htmlacademy.t.me/">
+              <span class="visually-hidden">Telegram</span>
+            </a>
+          </li>
+          <li>
+            <a class="social-button" href="https://www.youtube.com/@HTMLAcademyTV">
+              <span class="visually-hidden">YouTube</span>
+            </a>
+          </li>
+        </ul>
+
+        <address class="contacts">
+          <a href="tel:+78001234567" aria-label="Позвонить в службу поддержки">8 (800) 123-45-67</a>
+        </address>
+
+        <a class="footer__logo" href="https://htmlacademy.ru/intensive/htmlcss" aria-label="Перейти на сайт HTML Academy">
+          <img src="#" alt="Разработано в HTML Academy">
+        </a>
+      </section>
+    </footer>
   </body>
 
 </html>
