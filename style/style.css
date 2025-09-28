@@ -319,7 +319,13 @@ line-height: 40px;
 text-transform: uppercase;
 }
 
+
+
+
 /* НОВЫЕ СТИЛИ CATALOG */
+
+
+
 
 .catalog-filters {
 background-image: url("../images/backgrounds/catalog-background.webp");
@@ -330,6 +336,7 @@ background-size: cover;
 text-align: center;
 background-position: center center; /* Изображение по центру */
 text-align: left;
+
 }
 
 .page-title {
@@ -338,10 +345,18 @@ font-weight: 700;
 line-height: 78px;
 }
 
+.breadcrumbs__list {
+list-style-type: none; /* Убираем маркеры у списка */
+}
+
 .breadcrumbs__current {
 font-size: 16px;
 font-weight: 400;
 line-height: 21px;
+}
+
+.filter-section {
+padding-left: 0; /* Убираем отступ слева у списка */
 }
 
 .filter-section__title {
@@ -349,6 +364,11 @@ font-size: 20px;
 font-weight: 700;
 line-height: 24px;
 text-transform: capitalize; /* Первая буква заглавная */
+
+}
+
+.filter-list {
+list-style-type: none; /* Убираем маркеры у списка */
 }
 
 .filter-label {
