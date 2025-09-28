@@ -1,4 +1,473 @@
-body {
-background-color: red;
+/* Подключение шрифтов */
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/ptsans-400.woff2") format("woff2");
+  font-display: swap;
+}
 
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/ptsans-700.woff2") format("woff2");
+  font-display: swap; /* Чтобы текст отображался сразу, а не после загрузки шрифта */
+}
+
+/* База: глобальные параметры */
+
+.visually-hidden {
+  display: none; /* Полностью скрывает */
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+
+/* Шапка */
+.header {
+ font-size: 20px;
+ font-weight: 700;
+ line-height: 24px;
+ text-align: left;
+ text-transform: capitalize; /* Первая буква заглавная */
+}
+
+.nav__link {
+text-decoration: none; /* Убираем подчёркивание у ссылок */
+color: inherit; /* Наследуем цвет от родителя */
+}
+
+
+.welcome-section {
+background-image: url("../images/backgrounds/index-background.webp");
+background-color: rgba(131, 179, 211, 0.4);
+background-repeat: no-repeat; /* Без повторения */
+background-size: cover;
+text-align: center;
+background-position: center center; /* Изображение по центру */
+}
+
+.advantages {
+text-align: center;
+background-color: white;
+}
+
+.advantages__intro {
+ font-size: 30px;
+ font-weight: 700;
+ line-height: 36px;
+ text-align: center;
+ text-transform: uppercase;
+ background-color: white;
+ color: black
+}
+
+
+
+.advantages__text {
+ font-size: 22px;
+ font-weight: 400;
+ line-height: 26px;
+ background-color: white;
+color: black;
+}
+
+
+
+.advantages__item--dark {
+  background-color: rgba(130, 179, 211, 1);
+  }
+
+
+.advantages__item--dark h3 {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  text-transform: uppercase;
+  }
+
+
+.advantages__item--dark p {
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  text-transform: none;
+  }
+
+.advantages__item--light {
+  background-color:  rgba(131, 179, 211, 0.12);
+}
+
+.advantages__item--light h3 {
+font-size: 24px;
+font-weight: 700;
+line-height: 28px;
+text-transform: uppercase;
+}
+
+
+.advantages__item--light p {
+font-size: 18px;
+font-weight: 400;
+line-height: 21px;
+text-transform: none;
+}
+
+
+.advantages__item--accent{
+background-color:  rgba(131, 179, 211, 0.2);
+
+}
+
+.advantages__item--accent h3 {
+font-size: 24px;
+font-weight: 700;
+line-height: 28px;
+text-transform: uppercase;
+}
+
+.advantages__item--accent p {
+font-size: 18px;
+font-weight: 400;
+line-height: 21px;
+text-transform: none;
+
+}
+
+.services {
+text-align: center;
+}
+
+.services__slogan {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+
+.services__description {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.services__item--blue {
+background-color: rgba(130, 179, 211, 0.12);
+}
+.services__item--blue h3 {
+ font-size: 24px;
+ font-weight: 700;
+ line-height: 28px;
+ text-transform: uppercase;
+}
+
+.services__item--blue p {
+ font-size: 18px;
+ font-weight: 400;
+ line-height: 21px;
+ text-transform: none;
+}
+
+.services__item--white {
+  background-color: white
+}
+
+.services__item--white h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+.services__item--white p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  text-transform: none;
+}
+
+.cta {
+text-align: center;
+}
+
+.cta__title {
+ font-size: 30px;
+ font-weight: 700;
+ line-height: 36px;
+ text-transform: uppercase;
+}
+
+.cta__text {
+ font-size: 22px;
+ font-weight: 400;
+ line-height: 26px;
+ text-transform: none;
+}
+
+.button {
+width: 376px;
+height: 52px;
+border-radius: 4px;
+background-color: rgba(117, 97, 87, 1);
+color:  rgba(255, 255, 255, 1);
+font-family: PT Sans;
+font-size: 20px;
+font-weight: 700;
+line-height: 36px;
+text-transform: uppercase;
+}
+
+/* Общие стили для обеих секций */
+.subscribe {
+text-align: center;
+
+}
+
+/* Модификатор для версии с фоном */
+.subscribe--with-bg {
+background-image: url("../images/backgrounds/Subscribe.webp");
+background-color: rgba(131, 179, 211, 0.4);
+background-repeat: no-repeat; /* Без повторения фона */
+background-size: cover; /*Фон покрывает весь блок (может обрезать края)*/
+background-position: center center; /* Изображение по центру */
+}
+
+.subscribe__title {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: white;
+
+}
+
+.subscribe__text {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26px;
+  text-transform: none;
+  color: white;
+}
+
+.newsletter-form {
+display: flex; /* Используем Flexbox для выравнивания элементов в строку */
+width: 684px; /* 452px + 232px */
+margin: 0 auto; /* Центрируем форму */
+}
+
+.newsletter-form__input {
+width: 452px;
+height: 52px;
+padding: 12px 20px;
+border: none;
+border-radius: 4px 0px 0px 4px;
+background: rgba(242, 242, 242, 1);
+font-family: PT Sans;
+font-size: 18px;
+font-weight: 400;
+line-height: 24px;
+text-align: left;
+box-sizing: border-box; /* Решает проблему высоты */
+}
+
+.newsletter-button {
+width: 232px;
+height: 52px;
+border: none;
+border-radius: 0px 4px 4px 0px;
+background: rgba(130, 179, 211, 1);
+color: white;
+font-family: PT Sans;
+font-size: 20px;
+font-weight: 700;
+line-height: 36px;
+text-align: center;
+text-transform: uppercase;
+box-sizing: border-box; /* Решает проблему высоты */
+}
+
+
+
+.contacts {
+  /* Эти стили (фон, размер, выравнивание) остаются здесь, т.к. они влияют на контейнер <address> */
+background-color:   rgba(255, 255, 255, 1);
+text-align: center;
+}
+
+.contacts a {
+/* Переопределяем цвет, подчеркивание и текстовые свойства на самой ссылке */
+color: black;
+text-decoration: none; /* Убираем подчеркивание */
+font-style: normal; /* Убираем курсив у адреса */
+
+/* Переносим сюда текстовые свойства, чтобы они влияли на видимый текст */
+font-family: PT Sans;
+font-size: 40px;
+font-weight: 400;
+line-height: 40px;
+text-transform: uppercase;
+}
+
+/* НОВЫЕ СТИЛИ CATALOG */
+
+.catalog-filters {
+background-image: url("../images/backgrounds/catalog-background.webp");
+background-color: rgba(131, 179, 211, 0.4);
+color: rgba(255, 255, 255, 1);
+background-repeat: no-repeat; /* Без повторения */
+background-size: cover;
+text-align: center;
+background-position: center center; /* Изображение по центру */
+text-align: left;
+}
+
+.page-title {
+font-size: 60px;
+font-weight: 700;
+line-height: 78px;
+}
+
+.breadcrumbs__current {
+font-size: 16px;
+font-weight: 400;
+line-height: 21px;
+}
+
+.filter-section__title {
+font-size: 20px;
+font-weight: 700;
+line-height: 24px;
+text-transform: capitalize; /* Первая буква заглавная */
+}
+
+.filter-label {
+font-size: 18px;
+font-weight: 400;
+line-height: 23px;
+}
+.search-results__title {
+font-size: 30px;
+font-weight: 700;
+line-height: 36px;
+text-transform: uppercase;
+}
+.sorting {
+color: rgba(51, 51, 51, 1);
+font-family: PT Sans;
+font-size: 18px;
+font-weight: 400;
+line-height: 21px;
+text-align: left;
+}
+
+.hotel-card__details {
+list-style-type: none; /* Убираем маркеры у списка */
+}
+
+
+.hotel-card__title {
+color: rgba(0, 0, 0, 1);
+font-family: PT Sans;
+font-size: 24px;
+font-weight: 700;
+line-height: 28px;
+text-align: left;
+}
+
+.hotel-card__type {
+color: rgba(51, 51, 51, 1);
+font-family: PT Sans;
+font-size: 18px;
+font-weight: 400;
+line-height: 21px;
+text-align: left;
+}
+
+.hotel-card__price {
+color: rgba(51, 51, 51, 1);
+font-family: PT Sans;
+font-size: 18px;
+font-weight: 400;
+line-height: 21px;
+}
+
+.hotel-card__more a {
+color: rgba(255, 255, 255, 1);
+text-decoration: none; /* Убираем подчёркивание у ссылок */
+border-radius: 4px;
+background-color: rgba(117, 97, 87, 1);
+font-family: PT Sans;
+font-size: 16px;
+font-weight: 700;
+line-height: 20px;
+text-align: center;
+text-transform: uppercase;
+}
+
+.hotel-card__favorite {
+border-radius: 4px;
+/* background-color: rgba(130, 179, 211, 1); */
+color: rgba(255, 255, 255, 1);
+font-family: PT Sans;
+font-size: 16px;
+font-weight: 700;
+line-height: 20px;
+text-transform: uppercase;
+}
+
+.pagination {
+    display: flex;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination__item {
+    list-style-type: none;
+}
+
+.pagination__link {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+
+    background-color: rgba(130, 179, 211, 1);
+    font-family: PT Sans;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.pagination__link--current {
+    background-color: rgba(242, 242, 242, 1);
+    color: black;
+}
+
+.pagination__ellipsis {
+    display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background-color: rgba(242, 242, 242, 1);
+    color: rgba(0, 0, 0, 1);
+    font-family: PT Sans;
+    font-size: 22px;
+    font-weight: 400;
+    border-radius: 4px;
 }
