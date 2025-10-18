@@ -1,0 +1,24 @@
+{
+  "name": "htmlacademy-sedona",
+  "version": "1.0.0",
+  "description": "- Студент: [Геннадий Тихонов]({{userProfile}}). - Наставник: `Асинхронное обучение`. - Сайт: https://genfront.github.io/htmlacademy-sedona/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GenFront/htmlacademy-sedona.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GenFront/htmlacademy-sedona/issues"
+  },
+  "homepage": "https://github.com/GenFront/htmlacademy-sedona#readme",
+  "devDependencies": {
+    "stylelint": "^16.25.0",
+    "stylelint-config-standard": "^39.0.1"
+  }
+}
