@@ -243,3 +243,50 @@ images/
     ├── photo-1.webp
     └── photo-2.webp
 ```
+04.12.2025
+
+Задание 5.21. Сетка страниц и крупных блоков на флексах
+
+## Сетка страниц и крупных блоков
+
+- `<header class="header">`, `<main class="page__main">`, `<footer class="footer">` — три крупных блока. ✅
+- Центрированы и выровнены по сетке через `max-width` и `margin: 0 auto`. ✅
+
+## Sticky footer
+
+```css
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.page__main {
+  flex: 1; /* Footer прилипает к низу */
+}
+
+### Крупные блоки и фиксированное количество
+
+header — 1
+main — 1
+footer — 1
+
+Количество блоков неизменно.
+
+Использование flex, flex-grow, justify-content
+Header/footer: display: flex; justify-content: space-between; align-items: center;
+Main: flex: 1;
+Flex используется корректно для сетки.
+
+### Горизонтальные размеры и отступы
+
+Header/footer: max-width: 1060px + padding: 70px → визуально 1200px
+Main: max-width: 1200px, padding нет
+Margin: 0 auto → центрирование
+
+### Всё соответствует макету.
+### Визуальное выделение блоков
+### Для проверки сетки используется outline: 2px solid.

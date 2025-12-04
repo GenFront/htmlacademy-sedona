@@ -20,31 +20,88 @@
 .visually-hidden {
   display: none; /* Полностью скрывает */
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  box-sizing: border-box; /* Удобно для расчетов размеров */
+}
 
-body {
+ body {
+  display: flex;
+  flex-direction: column;
+  min-width: 1200px; /* по ТЗ */
   font-family: "PT Sans", sans-serif;
-  font-size: 22px;
-  line-height: 26px;
+  font-size: 18px;
+  line-height: 24px;
   font-weight: 400;
-  color: #333333;
-  background-color: #ffffff;
+  background-color: #f2f2f2;
+}
+
+/* включаем box-sizing для всех элементов — удобно при расчетах */
+/* *, *::before, *::after {
+  box-sizing: inherit;
+} */
+
+/* ===== КРУПНАЯ СЕТКА (1200px) ===== */
+/* Верх/низ получают padding по макету, main — нет */
+.header,
+.footer, .content {
+  max-width: 1060px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 70px;   /* padding только у header и footer-content */
 }
 
 
-/* Шапка */
+/* ===== HEADER ===== */
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0 auto;
  font-size: 20px;
  font-weight: 700;
  line-height: 24px;
  text-align: left;
  text-transform: capitalize; /* Первая буква заглавная */
+ outline: 2px solid red
 }
+
+.header__nav {
+  outline: 2px solid red;
+  background: yellow;
+
+}
+
+
+
+
+.header__logo {
+  border: 1px solid black;
+}
+.header__nav--left {
+  border: 1px solid black;
+}
+.header__nav--right {
+  border: 1px solid black;
+}
+
+
 
 .nav__link {
 text-decoration: none; /* Убираем подчёркивание у ссылок */
 color: inherit; /* Наследуем цвет от родителя */
 }
 
+/* MAIN — растягивается для sticky footer, без глобального padding */
+.page__main {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  flex: 1;            /* делает sticky footer */
+  outline: 2px solid green;
+}
 
 .welcome-section {
 background-image: url("../images/backgrounds/index-background.webp");
@@ -489,4 +546,17 @@ text-transform: uppercase;
     font-size: 22px;
     font-weight: 400;
     border-radius: 4px;
+}
+.footer, .content {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+
+ margin-top: auto; /* толкаем футер вниз */
+  gap: 40px; /* чтобы элементы не давили друг друга */
+  padding-top: 40px;
+  padding-bottom: 30px;
+
+ outline: 2px solid blue;
 }
