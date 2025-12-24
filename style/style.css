@@ -117,13 +117,13 @@ text-transform: capitalize; /* Первая буква заглавная */
    justify-content: center;
    align-items: center;
    /* gap: 10; */
-   padding: 1px 0px 0px 1px;
+  padding: 1px 0 0 1px;
   width: 44px; /* Кликабельная область больше иконки */
   height: 44px;
   background-image: url('../images/icons/icon-search.svg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 50px 50px;
+  background-size: 20px 20px;
   color: rgba(0, 0, 0, 1);
 }
 
