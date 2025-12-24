@@ -24,12 +24,14 @@ html, body {
   height: 100%;
   margin: 0;
   box-sizing: border-box; /* Удобно для расчетов размеров */
+  /* включаем box-sizing для всех элементов — удобно при расчетах */
 }
 
  body {
   display: flex;
   flex-direction: column;
   min-width: 1200px; /* по ТЗ */
+  min-height: 100vh; /* Чтобы sticky footer работал */
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 24px;
@@ -37,10 +39,8 @@ html, body {
   background-color: #f2f2f2;
 }
 
-/* включаем box-sizing для всех элементов — удобно при расчетах */
-/* *, *::before, *::after {
-  box-sizing: inherit;
-} */
+
+
 
 /* ===== КРУПНАЯ СЕТКА (1200px) ===== */
 /* Верх/низ получают padding по макету, main — нет */
@@ -55,52 +55,174 @@ html, body {
 
 /* ===== HEADER ===== */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  margin: 0 auto;
- font-size: 20px;
- font-weight: 700;
- line-height: 24px;
- text-align: left;
- text-transform: capitalize; /* Первая буква заглавная */
- outline: 2px solid red
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 64px;
+margin: 0 auto;
+font-size: 20px;
+font-weight: 700;
+line-height: 24px;
+/* text-align: left; */
+text-transform: capitalize; /* Первая буква заглавная */
+ background: rgba(255, 255, 255, 1);
 }
 
+/* ОБЩИЕ СТИЛИ ДЛЯ ОБОИХ НАВОВ */
 .header__nav {
-  outline: 2px solid red;
-  background: yellow;
-
+  display: flex;
+  align-items: center;
 }
 
 
 
 
 .header__logo {
-  border: 1px solid black;
+  width: 138px;
+  height: 64px;
+
 }
+/* Левый нав - меню навигации */
 .header__nav--left {
-  border: 1px solid black;
+   /* display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center; */
+  width: 339px;
+
 }
+/* Правый нав - действия пользователя */
 .header__nav--right {
-  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 268px;
 }
 
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  list-style: none; /* Убираем маркеры у списка */
+}
+
+/* Иконка поиска через background */
+.nav__item--search .nav__link {
+  /* display: block; */
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   /* gap: 10; */
+   padding: 1px 0px 0px 1px;
+  width: 44px; /* Кликабельная область больше иконки */
+  height: 44px;
+  background-image: url('../images/icons/icon-search.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px 50px;
+  color: rgba(0, 0, 0, 1);
+}
+
+/* Иконка избранного через background */
+.nav__item--favorite .nav__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  position: relative;
+}
+
+.nav__item--favorite .nav__link::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url('../images/icons/icon-search.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+}
+
+/* Счётчик избранного */
+.nav__count {
+  display: inline-block;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background-color: #7DB54F;
+  border-radius: 10px;
+  color: white;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+}
+
+/* Ховер-эффекты */
+.nav__item--search .nav__link:hover,
+.nav__item--favorite .nav__link:hover {
+  opacity: 0.7;
+}
+
+.nav__item--search .nav__link:active,
+.nav__item--favorite .nav__link:active {
+  opacity: 0.5;
+}
 
 
 .nav__link {
-text-decoration: none; /* Убираем подчёркивание у ссылок */
-color: inherit; /* Наследуем цвет от родителя */
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* Кнопка "ХОЧУ СЮДА!" */
+.nav__item--btm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 36px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 4px;
+  background: rgba(117, 97, 87, 1);
+}
+
+.nav__item--btm .nav__link {
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* СТИЛИ ДЛЯ АКТИВНОЙ ССЫЛКИ */
+.nav__link--activ {
+  /* Добавлю потом стили для активной ссылки */
+  color: #756157;
+  text-decoration: underline;
 }
 
 /* MAIN — растягивается для sticky footer, без глобального padding */
 .page__main {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  flex: 1;            /* делает sticky footer */
-  outline: 2px solid green;
+max-width: 1200px;
+width: 100%;
+margin: 0 auto;
+flex-grow: 1;  /* растягивается, делает sticky footer */
+outline: 2px solid green;
+outline-offset: -2px; /* Исправлено: только offset без цвета */
 }
 
 .welcome-section {
@@ -305,11 +427,29 @@ background-position: center center; /* Изображение по центру 
   font-weight: 700;
   line-height: 36px;
   text-transform: uppercase;
+  color: black;
+}
+
+.subscribe__title--light {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  text-transform: uppercase;
   color: white;
 
 }
 
+
+
 .subscribe__text {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26px;
+  text-transform: none;
+  color: black;
+}
+
+.subscribe__text--light {
   font-size: 22px;
   font-weight: 400;
   line-height: 26px;
@@ -321,6 +461,7 @@ background-position: center center; /* Изображение по центру 
 display: flex; /* Используем Flexbox для выравнивания элементов в строку */
 width: 684px; /* 452px + 232px */
 margin: 0 auto; /* Центрируем форму */
+ padding: 12px 20px 12px 20px;
 }
 
 .newsletter-form__input {
@@ -329,7 +470,7 @@ height: 52px;
 padding: 12px 20px;
 border: none;
 border-radius: 4px 0 0 4px;
-background: rgba(242, 242, 242, 1);
+background: #fafafa;
 font-family: PT Sans;
 font-size: 18px;
 font-weight: 400;
@@ -552,11 +693,9 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
-
- margin-top: auto; /* толкаем футер вниз */
-  gap: 40px; /* чтобы элементы не давили друг друга */
-  padding-top: 40px;
-  padding-bottom: 30px;
-
- outline: 2px solid blue;
+gap: 40px; /* чтобы элементы не давили друг друга */
+padding-top: 40px;
+padding-bottom: 30px;
+outline: 2px solid blue;
+outline-offset: -2px solid blue;
 }
