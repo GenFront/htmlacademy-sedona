@@ -119,7 +119,7 @@ text-transform: capitalize; /* Первая буква заглавная */
    /* gap: 10; */
   padding: 1px 0 0 1px;
   width: 44px; /* Кликабельная область больше иконки */
-  height: 44px;
+  height: 64px;
   background-image: url('../images/icons/icon-search.svg');
   background-repeat: no-repeat;
   background-position: center;
