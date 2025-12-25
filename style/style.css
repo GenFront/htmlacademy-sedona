@@ -27,29 +27,28 @@ html, body {
   /* включаем box-sizing для всех элементов — удобно при расчетах */
 }
 
- body {
-  display: flex;
-  flex-direction: column;
-  min-width: 1200px; /* по ТЗ */
-  min-height: 100vh; /* Чтобы sticky footer работал */
-  font-family: "PT Sans", sans-serif;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 400;
-  background-color: #f2f2f2;
+/*Централизация управления шириной: весь контент центрируется одним контейнером*/
+.page-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;  /* Можно уже, но не шире */
+    width: 100%;        /* Занимает всю доступную ширину до 1200px */
+    min-height: 100vh;
+    margin: 0 auto;
+    color: #000000;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Легкая тень вокруг страницы */
 }
 
-
-
-
-/* ===== КРУПНАЯ СЕТКА (1200px) ===== */
-/* Верх/низ получают padding по макету, main — нет */
-.header,
-.footer, .content {
-  max-width: 1060px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 70px;   /* padding только у header и footer-content */
+body {
+    min-width: 1200px;
+    height: 100%;
+    margin: 0;
+    font-family: "PT Sans", sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    background-color: #f2f2f2;
 }
 
 
@@ -59,11 +58,10 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 height: 64px;
-margin: 0 auto;
 font-size: 20px;
 font-weight: 700;
 line-height: 24px;
-/* text-align: left; */
+ padding: 0 70px;  /* По макету */
 text-transform: capitalize; /* Первая буква заглавная */
  background: rgba(255, 255, 255, 1);
 }
@@ -72,6 +70,7 @@ text-transform: capitalize; /* Первая буква заглавная */
 .header__nav {
   display: flex;
   align-items: center;
+
 }
 
 
@@ -120,7 +119,6 @@ text-transform: capitalize; /* Первая буква заглавная */
   padding: 1px 0 0 1px;
   width: 44px; /* Кликабельная область больше иконки */
   height: 64px;
-  background-image: url('../images/icons/icon-search.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px 20px;
@@ -217,12 +215,7 @@ text-transform: capitalize; /* Первая буква заглавная */
 
 /* MAIN — растягивается для sticky footer, без глобального padding */
 .page__main {
-max-width: 1200px;
-width: 100%;
-margin: 0 auto;
 flex-grow: 1;  /* растягивается, делает sticky footer */
-outline: 2px solid green;
-outline-offset: -2px; /* Исправлено: только offset без цвета */
 }
 
 .welcome-section {
@@ -497,25 +490,7 @@ box-sizing: border-box; /* Решает проблему высоты */
 
 
 
-.contacts {
-  /* Эти стили (фон, размер, выравнивание) остаются здесь, т.к. они влияют на контейнер <address> */
-background-color:   rgba(255, 255, 255, 1);
-text-align: center;
-}
 
-.contacts a {
-/* Переопределяем цвет, подчеркивание и текстовые свойства на самой ссылке */
-color: black;
-text-decoration: none; /* Убираем подчеркивание */
-font-style: normal; /* Убираем курсив у адреса */
-
-/* Переносим сюда текстовые свойства, чтобы они влияли на видимый текст */
-font-family: PT Sans;
-font-size: 40px;
-font-weight: 400;
-line-height: 40px;
-text-transform: uppercase;
-}
 
 
 
@@ -688,14 +663,106 @@ text-transform: uppercase;
     font-weight: 400;
     border-radius: 4px;
 }
-.footer, .content {
+
+/* Footer */
+
+.footer a {
+text-decoration: none;
+color: #000000;
+}
+
+.footer {
+min-height: 120px;
+background: white;
+}
+
+.content {
 display: flex;
 flex-direction: row;
-justify-content: space-between;
+/* justify-content: space-between; */
 align-items: center;
-gap: 40px; /* чтобы элементы не давили друг друга */
-padding-top: 40px;
-padding-bottom: 30px;
-outline: 2px solid blue;
-outline-offset: -2px solid blue;
+max-width: 1060px;
+min-height: 50px;
+margin: 0 auto;
+padding: 45px 0 30px; /* только верх/низ, боковые - через margin: auto */
+}
+
+/*Социальные сети*/
+.socials-list {
+display: flex;
+flex-wrap: wrap;
+flex: 0 0 auto; /* не растягивается */
+width: 192px;
+margin: 0;
+margin-right: auto;
+padding: 0;
+list-style-type: none;
+}
+
+.social-list-item {
+width: 48px;
+height: 40px;
+}
+
+.social-item-link {
+position: relative;
+display: block;
+width: 100%;
+height: 100%;
+}
+
+.social-link-icon {
+position: absolute;
+inset: 0;
+margin: auto;
+fill: #83b3d3;
+}
+.social-item-link:hover .social-link-icon {
+  fill: #68a2ca;
+}
+.social-item-link:focus .social-link-icon {
+  fill: #68a2ca;
+}
+.social-item-link:active .social-link-icon {
+  fill: rgba(104, 162, 202, 0.3);
+}
+
+
+.contacts {
+flex: 1; /* занимает всё доступное пространство */
+text-align: center;
+min-width: 331px;
+height: 40px;
+}
+
+.contacts-phone {
+font-style: normal;
+font-size: 40px;
+line-height: 40px;
+text-transform: uppercase;
+}
+.contacts-phone:hover {
+color: #756157;
+}
+.contacts-phone:focus {
+color: #756157;
+}
+.contacts-phone:active {
+color: rgba(117, 97, 87, 0.3);
+}
+
+.logo-htmlacademy-link {
+margin-left: auto; /* отодвигает логотип вправо */
+}
+
+.logo-htmlacademy-link:hover .logo-htmlacademy-icon {
+  fill: #756157;
+}
+
+.logo-htmlacademy-link:focus .logo-htmlacademy-icon {
+  fill: #756157;
+}
+
+.logo-htmlacademy-link:active .logo-htmlacademy-icon {
+  fill: rgba(117, 97, 87, 0.3);
 }
